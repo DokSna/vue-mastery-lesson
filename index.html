@@ -7,7 +7,27 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="app">
+  <div class="nav-bar"></div>
+
+<div id="app">
+  
+  <div class="product">
+  
+    <div class="product-image">
+      <img :src="image" />
+    </div>
+
+    <div class="product-info">
+      <h1>{{ product }}</h1>
+      <a :href="link" target="_blank">More products like this</a>
+    </div>
+    
+  </div>
+    
+</div> 
+
+ <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+    <!-- <div id="app">
 
         <div class="product">
       
@@ -21,7 +41,7 @@
           </div>
       
         </div>
-    </div>
+    </div> -->
       
     <!-- <div id="app">
         <h1>{{ product }}</h1>
