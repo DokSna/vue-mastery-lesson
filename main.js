@@ -6,7 +6,18 @@ let app = new Vue({
     image: "./assets/vmSocks-green.jpg",
     inStock: true,
     inventory: 100,
-    onSale: true
+    onSale: true,
+    variants: [
+      {
+        variantId: 2234,
+        variantColor: 'green'    
+      },
+      {
+        variantId: 2235,
+        variantColor: 'blue'
+      }
+    ],
+    sizes: ['S', 'M', 'L', 'XL', 'XXL', 'XXXL']
   }
 })
 
