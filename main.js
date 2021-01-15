@@ -1,25 +1,28 @@
 // Lesson 3
 let app = new Vue({
-  el: '#app',
+  el: "#app",
   data: {
     product: "Socks",
     image: "./assets/vmSocks-green.jpg",
     inStock: true,
-    inventory: 100,
-    onSale: true,
+    details: ["80% cotton", "20% polyester", "Gender-neutral"],
     variants: [
       {
         variantId: 2234,
-        variantColor: 'green'    
+        variantColor: "green",
       },
       {
         variantId: 2235,
-        variantColor: 'blue'
-      }
+        variantColor: "blue",
+      },
     ],
+    // кол-во товара в корзине
+    cart: 0,
+    // inventory: 100,
+    // onSale: true,
     sizes: ['S', 'M', 'L', 'XL', 'XXL', 'XXXL']
-  }
-})
+  },
+});
 
 // Lesson 2
 //Add a link to your data object, and use v-bind to sync it up with an anchor tag in your HTML. Hint: you’ll be binding to the href attribute.
@@ -30,10 +33,8 @@ let app = new Vue({
 //       product: 'Socks',
 //       image: 'https://www.vuemastery.com/images/challenges/vmSocks-green-onWhite.jpg',
 //       link: 'https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=socks'
-//     } 
+//     }
 //   })
-  
-  
 
 // var app = new Vue({
 //     el: '#app',
