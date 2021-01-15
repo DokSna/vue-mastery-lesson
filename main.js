@@ -20,7 +20,12 @@ let app = new Vue({
     cart: 0,
     // inventory: 100,
     // onSale: true,
-    sizes: ['S', 'M', 'L', 'XL', 'XXL', 'XXXL']
+    sizes: ["S", "M", "L", "XL", "XXL", "XXXL"],
+  },
+  methods: {
+    addToCart() {
+      this.cart += 1;
+    },
   },
 });
 
