@@ -10,21 +10,31 @@ let app = new Vue({
       {
         variantId: 2234,
         variantColor: "green",
+        variantImage: "./assets/vmSocks-green.jpg",
       },
       {
         variantId: 2235,
         variantColor: "blue",
+        variantImage: "./assets/vmSocks-blue.jpg",
       },
     ],
     // кол-во товара в корзине
     cart: 0,
     // inventory: 100,
     // onSale: true,
-    sizes: ["S", "M", "L", "XL", "XXL", "XXXL"],
+    // sizes: ["S", "M", "L", "XL", "XXL", "XXXL"],
   },
   methods: {
     addToCart() {
       this.cart += 1;
+    },
+    removeCart() {
+      if (this.cart > 0) {
+        this.cart -= 1;
+      }
+    },
+    updateProduct(variantImage) {
+      this.image = variantImage;
     },
   },
 });
