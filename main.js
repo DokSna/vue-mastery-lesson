@@ -1,21 +1,22 @@
 // Lesson 3
 let app = new Vue({
-  el: "#app",
+  el: '#app',
   data: {
-    product: "Socks",
-    image: "./assets/vmSocks-green.jpg",
+    product: 'Socks',
+    brand: 'Vue Mastery',
+    image: './assets/vmSocks-green.jpg',
     inStock: true,
-    details: ["80% cotton", "20% polyester", "Gender-neutral"],
+    details: ['80% cotton', '20% polyester', 'Gender-neutral'],
     variants: [
       {
         variantId: 2234,
-        variantColor: "green",
-        variantImage: "./assets/vmSocks-green.jpg",
+        variantColor: 'green',
+        variantImage: './assets/vmSocks-green.jpg',
       },
       {
         variantId: 2235,
-        variantColor: "blue",
-        variantImage: "./assets/vmSocks-blue.jpg",
+        variantColor: 'blue',
+        variantImage: './assets/vmSocks-blue.jpg',
       },
     ],
     // кол-во товара в корзине
@@ -35,6 +36,11 @@ let app = new Vue({
     },
     updateProduct(variantImage) {
       this.image = variantImage;
+    },
+  },
+  computed: {
+    title() {
+      return this.brand + ' ' + this.product;
     },
   },
 });
