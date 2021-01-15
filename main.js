@@ -4,26 +4,29 @@ let app = new Vue({
   data: {
     product: 'Socks',
     brand: 'Vue Mastery',
-    image: './assets/vmSocks-green.jpg',
-    inStock: true,
+    selectedVariant: 0,
+    // кол-во товара в корзине
+    cart: 0,
+    // image: './assets/vmSocks-green.jpg',
     details: ['80% cotton', '20% polyester', 'Gender-neutral'],
     variants: [
       {
         variantId: 2234,
         variantColor: 'green',
         variantImage: './assets/vmSocks-green.jpg',
+        variantQuantity: 10,
       },
       {
         variantId: 2235,
         variantColor: 'blue',
         variantImage: './assets/vmSocks-blue.jpg',
+        variantQuantity: 0,
       },
     ],
-    // кол-во товара в корзине
-    cart: 0,
     // inventory: 100,
     // onSale: true,
     // sizes: ["S", "M", "L", "XL", "XXL", "XXXL"],
+    onSale: true,
   },
   methods: {
     addToCart() {
@@ -34,13 +37,28 @@ let app = new Vue({
         this.cart -= 1;
       }
     },
-    updateProduct(variantImage) {
-      this.image = variantImage;
+    updateProduct(index) {
+      this.selectedVariant = index;
+      console.log(index);
     },
   },
   computed: {
     title() {
       return this.brand + ' ' + this.product;
+    },
+    image() {
+      return this.variants[this.selectedVariant].variantImage;
+    },
+    // inStock: true,
+    inStock() {
+      return this.variants[this.selectedVariant].variantQuantity;
+    },
+    sale() {
+      if (this.onSale) {
+        return 'Распродажа ' + this.brand + ' ' + this.product;
+      } else {
+        return 'Для ' + this.brand + ' ' + this.product + ' нет распродажи';
+      }
     },
   },
 });
