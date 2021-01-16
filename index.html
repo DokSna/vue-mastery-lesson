@@ -19,12 +19,16 @@
         <div class="product-info">
           <h1>{{ title }}</h1>
 
+          <!--распродажа-->
           <p>{{sale}}</p>
 
           <!-- <p v-if="inStock()">In stock</p>
           <p v-else :class="{ outOfStock: !inStock() }">Out of Stock</p> -->
           <p v-if="inStock">In Stock</p>
           <p v-else>Out of Stock</p>
+
+          <!-- компоненты -->
+          <!-- <p>Shipping: {{ shipping }}</p> -->
 
           <ul>
             <li v-for="detail in details">{{ detail }}</li>
@@ -49,9 +53,6 @@
         </div>
       </div>
 
-      <div class="cart">
-        <p>Cart ({{ cart }})</p>
-      </div>
       <button
         v-on:click="addToCart"
         :disabled="!inStock"
@@ -61,6 +62,10 @@
       </button>
       <button v-on:click="removeCart">Remove from cart</button>
       <!-- <button v-on:click="cart += 1">Add to cart</button> -->
+
+      <div class="cart">
+        <p>Cart ({{ cart }})</p>
+      </div>
     </div>
     <!-- Lesson 4 -->
 

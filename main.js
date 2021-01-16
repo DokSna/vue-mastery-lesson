@@ -5,8 +5,6 @@ let app = new Vue({
     product: 'Socks',
     brand: 'Vue Mastery',
     selectedVariant: 0,
-    // кол-во товара в корзине
-    cart: 0,
     // image: './assets/vmSocks-green.jpg',
     details: ['80% cotton', '20% polyester', 'Gender-neutral'],
     variants: [
@@ -23,6 +21,8 @@ let app = new Vue({
         variantQuantity: 0,
       },
     ],
+    // кол-во товара в корзине
+    cart: 0,
     // inventory: 100,
     // onSale: true,
     // sizes: ["S", "M", "L", "XL", "XXL", "XXXL"],
