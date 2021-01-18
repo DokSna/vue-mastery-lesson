@@ -19,9 +19,13 @@ Vue.component('product', {
       <p>Shipping: {{ shipping }}</p>
 
       <p>User is premium: {{ premium }}</p>
+
+      <product-details :details="details"></product-details>
+      <!--
       <ul>
         <li v-for="detail in details">{{ detail }}</li>
       </ul>
+      -->
 
       <div
         class="color-box"
@@ -124,6 +128,20 @@ Vue.component('product', {
   props: {
     premium: {
       type: Boolean,
+      required: true,
+    },
+  },
+});
+
+Vue.component('product-details', {
+  template: `
+  <ul>
+    <li v-for="detail in details">{{ detail }}</li>
+  </ul>
+  `,
+  props: {
+    details: {
+      type: Array,
       required: true,
     },
   },
