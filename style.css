@@ -40,11 +40,16 @@ img {
   margin-right: 25px;
   float: right;
   border: 1px solid #d8d8d8;
-  padding: 5px 20px;
+  /* padding: 5px 20px; */
+  height: 30px;
+  width: 100px;
+  /* margin: 0px; */
+  text-align: center;
+  padding-bottom: 20px;
 }
 
 button {
-  margin-top: 30px;
+  /* margin-top: 30px; */
   border: none;
   background-color: #1e95ea;
   color: white;
@@ -82,3 +87,10 @@ textarea {
   display: inline-block;
   height: 40px;
 } */
+
+.cart_wrapper {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
