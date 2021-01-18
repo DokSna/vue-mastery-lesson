@@ -16,6 +16,9 @@ Vue.component('product', {
       <p v-if="inStock">In Stock</p>
       <p v-else>Out of Stock</p>
 
+      <p>Shipping: {{ shipping }}</p>
+
+      <p>User is premium: {{ premium }}</p>
       <ul>
         <li v-for="detail in details">{{ detail }}</li>
       </ul>
@@ -110,11 +113,27 @@ Vue.component('product', {
         return 'Для ' + this.brand + ' ' + this.product + ' нет распродажи';
       }
     },
+    shipping() {
+      if (this.premium) {
+        return 'Free';
+      } else {
+        return 2.99;
+      }
+    },
+  },
+  props: {
+    premium: {
+      type: Boolean,
+      required: true,
+    },
   },
 });
 
 let app = new Vue({
   el: '#app',
+  data: {
+    premium: true,
+  },
 });
 
 // Lesson 3
